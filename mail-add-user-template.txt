@@ -1,0 +1,13 @@
+Hello,
+
+Your Wyvern user account has been successfully set up. You may connect with the following user credentials:
+
+Service: SSH
+Hostname: wyvern.pravian.net
+Port: 22
+Username: #USER
+Password: #PASS
+
+This is an automatically generated email. Ignorance is bliss.
+
+Cooper
