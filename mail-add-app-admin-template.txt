@@ -1,0 +1,15 @@
+Hello,
+
+Your Wyvern user has been granted management privileges for an application account.
+
+You may access the application user account through your personal user with the details below:
+
+Your user: #WYVERNUSER
+Application user: #USER
+Commands:
+  sudo -u #USER -s
+  script /dev/null  
+
+This is an automatically generated email. Ignorance is bliss.
+
+Cooper
