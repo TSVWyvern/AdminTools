@@ -1,6 +1,6 @@
 #!/bin/bash
 if [ "$#" -ne 3 ]; then
-  echo "Usage: ./wy-add-app-manager.sh <appuser> <appmanager> <email>"
+  echo "Usage: ./wy-add-app-manager.sh <app> <manager> <email>"
   exit
 fi
 
