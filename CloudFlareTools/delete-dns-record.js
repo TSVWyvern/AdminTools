@@ -35,7 +35,6 @@ requests.getDNSRecords(function (response, body) {
 
                 console.log("\x1b[30m", "");
             }
-
         });
     } else {
         console.log("\x1b[31m","No DNS record with name : " + name + " was found");

@@ -1,14 +1,10 @@
 const request = require('request');
+const requests = require('./requests');
 const fs = require('fs');
 
 console.log("\x1b[0m","");
 
-var options = JSON.parse(fs.readFileSync("./options.json"));
-const validTypes = JSON.parse(fs.readFileSync("./valid-types.json"));
-
-options.url += "dns_records";
-options.method = "POST";
-options.headers['Content-Type'] = "multipart/form-data";
+const validTypes = JSON.parse(fs.readFileSync("../CloudFlareTools/resources/valid-types.json"));
 
 function checkInputs() {
     var type = process.argv[2];
@@ -57,20 +53,19 @@ function checkInputs() {
 }
 
 function addDomain(type, name) {
-    const content = "wyvern.xyz";
-    options.formData = {
-        type : type,
-        name : name,
-        content : content
-    };
+    requests.addDNSRecord(type, name, function (response, body) {
+        var result = JSON.parse(body).success;
 
-    request(options, function (error, response, body) {
-        if (error) {
-            console.log(error);
+        if (result) {
+            console.log("\x1b[32m","The record was added successfully");
+
+            console.log("\x1b[30m","");
         } else {
-            console.log(response);
+            console.log("\x1b[31m","DNS record with name : " + name + " could not be added");
+
+            console.log("\x1b[30m", "");
         }
-    });
+    })
 }
 
 checkInputs();

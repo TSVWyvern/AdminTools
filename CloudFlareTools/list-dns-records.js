@@ -12,6 +12,13 @@ requests.getDNSRecords(function(response, body) {
                 console.log("\x1b[32m","Proxiable : " + domain.proxiable);
                 console.log("\x1b[32m","Proxied : " + domain.proxied);
                 break;
+            case 'SRV':
+                console.log("\x1b[34m","Type : " + domain.type);
+                console.log("\x1b[34m","Sub domain : " + domain.name);
+                console.log("\x1b[34m","Details : " + domain.content);
+                console.log("\x1b[34m","Proxiable : " + domain.proxiable);
+                console.log("\x1b[34m","Proxied : " + domain.proxied);
+                break;
             default:
                 console.log("\x1b[33m","Type : " + domain.type);
                 console.log("\x1b[33m","Sub domain : " + domain.name);
@@ -22,5 +29,3 @@ requests.getDNSRecords(function(response, body) {
         console.log("\x1b[30m","");
     }
 });
-
-
